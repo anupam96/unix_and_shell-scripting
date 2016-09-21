@@ -1,0 +1,6 @@
+#!/bin/bash
+i=1
+for((;;;))
+do
+echo "$(i++)"
+done
