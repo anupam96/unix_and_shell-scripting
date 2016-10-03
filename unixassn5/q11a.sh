@@ -1,26 +1,25 @@
 #!/bin/bash
-echo "enter rows"
+
+echo "Enter number of rows"
 read n
-sum1=0
-sum2=0
+
 for((i=1;i<=$n;i++))
 do
-	for((k=$(echo "$n-$i"|bc);k>0;k--))
-	do	
-	echo -n " "
-	done
-	for((j=1;j<=$i;j++))
+	for((j=i;j<=$n;j++))
 	do
-	sum1=$(echo "$sum1 + 1"|bc) 
-	echo -n "$sum1"
+		printf " ";
 	done
-	for((p=1;p<=$(echo "$i-1"|bc);p++))
-	do
-	sum2=$(echo "$sum1 - $p"|bc)
-	echo -n "$sum2"
-	#sum2=$(echo "$sum2 - 1"|bc)
-	#echo -n "$sum2"
+
+	for((k=i;k<=(2*$i-1);k++))
+	do 
+		printf "$k";
 	done
-echo ""
-done	
+
 	
+	for((l=($k-2);l>=$i;l--))
+	do 	
+		printf "$l";
+	done
+
+	echo " "
+done
